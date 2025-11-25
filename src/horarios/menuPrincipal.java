@@ -1,5 +1,7 @@
 package horarios;
 
+import java.awt.CardLayout;
+
 public class menuPrincipal extends javax.swing.JFrame {
 
     /**
@@ -7,6 +9,9 @@ public class menuPrincipal extends javax.swing.JFrame {
      */
     public menuPrincipal() {
         initComponents();
+        panelContenido.add(new Profesores(), "profesores");
+        panelContenido.add(new Cursos(), "cursos");
+        panelContenido.add(new Salones(), "salones");
     }
 
     /**
@@ -24,12 +29,12 @@ public class menuPrincipal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        btnProfesores = new javax.swing.JButton();
+        btnSalones = new javax.swing.JButton();
+        btnCursos = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jPanel3 = new javax.swing.JPanel();
+        btnHorarios = new javax.swing.JButton();
+        panelContenido = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
 
         jLabel3.setText("jLabel3");
@@ -85,30 +90,30 @@ public class menuPrincipal extends javax.swing.JFrame {
         jPanel2.setMinimumSize(new java.awt.Dimension(120, 520));
         jPanel2.setPreferredSize(new java.awt.Dimension(120, 520));
 
-        jButton1.setBackground(new java.awt.Color(255, 242, 255));
-        jButton1.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton1.setText("PROFESORES");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        btnProfesores.setBackground(new java.awt.Color(255, 242, 255));
+        btnProfesores.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnProfesores.setText("PROFESORES");
+        btnProfesores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                btnProfesoresActionPerformed(evt);
             }
         });
 
-        jButton2.setBackground(new java.awt.Color(255, 242, 255));
-        jButton2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton2.setText("SALONES");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        btnSalones.setBackground(new java.awt.Color(255, 242, 255));
+        btnSalones.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnSalones.setText("SALONES");
+        btnSalones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                btnSalonesActionPerformed(evt);
             }
         });
 
-        jButton3.setBackground(new java.awt.Color(255, 242, 255));
-        jButton3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton3.setText("CURSOS");
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
+        btnCursos.setBackground(new java.awt.Color(255, 242, 255));
+        btnCursos.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnCursos.setText("CURSOS");
+        btnCursos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+                btnCursosActionPerformed(evt);
             }
         });
 
@@ -122,12 +127,12 @@ public class menuPrincipal extends javax.swing.JFrame {
             }
         });
 
-        jButton5.setBackground(new java.awt.Color(255, 242, 255));
-        jButton5.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        jButton5.setText("HORARIOS");
-        jButton5.addActionListener(new java.awt.event.ActionListener() {
+        btnHorarios.setBackground(new java.awt.Color(255, 242, 255));
+        btnHorarios.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnHorarios.setText("HORARIOS");
+        btnHorarios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton5ActionPerformed(evt);
+                btnHorariosActionPerformed(evt);
             }
         });
 
@@ -138,37 +143,37 @@ public class menuPrincipal extends javax.swing.JFrame {
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnProfesores, javax.swing.GroupLayout.DEFAULT_SIZE, 106, Short.MAX_VALUE)
+                    .addComponent(btnSalones, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(btnCursos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(btnHorarios, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addGap(114, 114, 114)
-                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnProfesores, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnSalones, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnCursos, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(44, 44, 44)
-                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(btnHorarios, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap())
         );
 
-        jPanel3.setBackground(new java.awt.Color(255, 242, 255));
-        jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 51)));
-        jPanel3.setMaximumSize(new java.awt.Dimension(680, 520));
-        jPanel3.setMinimumSize(new java.awt.Dimension(680, 520));
-        jPanel3.setPreferredSize(new java.awt.Dimension(680, 520));
-        jPanel3.setRequestFocusEnabled(false);
-        jPanel3.setVerifyInputWhenFocusTarget(false);
-        jPanel3.setLayout(new java.awt.CardLayout());
+        panelContenido.setBackground(new java.awt.Color(255, 242, 255));
+        panelContenido.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 51, 51)));
+        panelContenido.setMaximumSize(new java.awt.Dimension(680, 520));
+        panelContenido.setMinimumSize(new java.awt.Dimension(680, 520));
+        panelContenido.setPreferredSize(new java.awt.Dimension(680, 520));
+        panelContenido.setRequestFocusEnabled(false);
+        panelContenido.setVerifyInputWhenFocusTarget(false);
+        panelContenido.setLayout(new java.awt.CardLayout());
 
         jPanel6.setBackground(new java.awt.Color(255, 51, 0));
         jPanel6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
@@ -194,7 +199,7 @@ public class menuPrincipal extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(0, 0, 0)
-                .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(panelContenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
@@ -203,7 +208,7 @@ public class menuPrincipal extends javax.swing.JFrame {
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(panelContenido, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(0, 0, 0)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
@@ -211,25 +216,28 @@ public class menuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void btnProfesoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfesoresActionPerformed
+        CardLayout cl = (CardLayout)(panelContenido.getLayout());
+        cl.show(panelContenido, "profesores");
+    }//GEN-LAST:event_btnProfesoresActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    private void btnSalonesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalonesActionPerformed
+        CardLayout cl = (CardLayout)(panelContenido.getLayout());
+        cl.show(panelContenido, "salones");
+    }//GEN-LAST:event_btnSalonesActionPerformed
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    private void btnCursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCursosActionPerformed
+        CardLayout cl = (CardLayout)(panelContenido.getLayout());
+        cl.show(panelContenido, "cursos");
+    }//GEN-LAST:event_btnCursosActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+    private void btnHorariosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHorariosActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton5ActionPerformed
+    }//GEN-LAST:event_btnHorariosActionPerformed
 
     /**
      * @param args the command line arguments
@@ -267,11 +275,11 @@ public class menuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
+    private javax.swing.JButton btnCursos;
+    private javax.swing.JButton btnHorarios;
+    private javax.swing.JButton btnProfesores;
+    private javax.swing.JButton btnSalones;
     private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
@@ -284,9 +292,9 @@ public class menuPrincipal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel panelContenido;
     // End of variables declaration//GEN-END:variables
 }
