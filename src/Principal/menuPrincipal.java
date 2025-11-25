@@ -1,5 +1,9 @@
-package horarios;
+package Principal;
 
+import utiles.emptyPane;
+import Profesores.Profesores;
+import Cursos.Cursos;
+import Salones.Salones;
 import java.awt.CardLayout;
 
 public class menuPrincipal extends javax.swing.JFrame {
@@ -49,7 +53,7 @@ public class menuPrincipal extends javax.swing.JFrame {
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 60));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/horarios/logo_banner_chikito.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utiles/logo_banner_chikito.png"))); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -282,19 +286,11 @@ public class menuPrincipal extends javax.swing.JFrame {
     private javax.swing.JButton btnSalones;
     private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel panelContenido;
     // End of variables declaration//GEN-END:variables

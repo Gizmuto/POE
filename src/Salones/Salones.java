@@ -1,4 +1,4 @@
-package horarios;
+package Salones;
 
 public class Salones extends javax.swing.JPanel {
 
@@ -55,10 +55,7 @@ public class Salones extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "ID", "PROYECTOR", "COMPUTADORES", "TABLEROS"

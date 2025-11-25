@@ -1,4 +1,4 @@
-package horarios;
+package Profesores;
 
 public class Profesores extends javax.swing.JPanel {
 
@@ -55,10 +55,7 @@ public class Profesores extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+
             },
             new String [] {
                 "ID", "DOCENTE", "CURSOS IMPARTIBLES", "HORARIOS DISPONIBLES"
@@ -67,6 +64,7 @@ public class Profesores extends javax.swing.JPanel {
         jTable1.setMaximumSize(new java.awt.Dimension(668, 80));
         jTable1.setMinimumSize(new java.awt.Dimension(668, 80));
         jTable1.setPreferredSize(new java.awt.Dimension(668, 80));
+        jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
 
         jButton2.setBackground(new java.awt.Color(255, 242, 255));
