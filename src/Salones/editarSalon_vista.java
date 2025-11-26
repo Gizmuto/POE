@@ -5,9 +5,9 @@ package Salones;
 //import Cursos.*;
 //import Profesores.*;
 
-public class eliminarSalon extends javax.swing.JFrame {
+public class editarSalon_vista extends javax.swing.JFrame {
 
-    public eliminarSalon() {
+    public editarSalon_vista() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -50,12 +50,12 @@ public class eliminarSalon extends javax.swing.JFrame {
         jLabel4.setPreferredSize(new java.awt.Dimension(109, 40));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utiles/logo_banner_chikito.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/logo_banner_chikito.png"))); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("ELIMINAR SALÓN");
+        jLabel5.setText("EDITAR SALÓN");
         jLabel5.setAlignmentY(0.7F);
         jLabel5.setPreferredSize(new java.awt.Dimension(109, 40));
 
@@ -88,7 +88,7 @@ public class eliminarSalon extends javax.swing.JFrame {
 
         btnProfesores2.setBackground(new java.awt.Color(255, 204, 204));
         btnProfesores2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnProfesores2.setText("ELIMINAR");
+        btnProfesores2.setText("ACTUALIZAR");
         btnProfesores2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
         btnProfesores2.setMaximumSize(new java.awt.Dimension(120, 40));
         btnProfesores2.setMinimumSize(new java.awt.Dimension(120, 40));
@@ -125,6 +125,7 @@ public class eliminarSalon extends javax.swing.JFrame {
         jLabel6.setAlignmentY(0.7F);
         jLabel6.setPreferredSize(new java.awt.Dimension(109, 40));
 
+        jComboBox1.setEditable(true);
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "SÍ", "NO" }));
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -133,14 +134,13 @@ public class eliminarSalon extends javax.swing.JFrame {
         jLabel7.setAlignmentY(0.7F);
         jLabel7.setPreferredSize(new java.awt.Dimension(109, 40));
 
-        txtID1.setEditable(false);
-
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
         jLabel8.setText("TABLEROS:");
         jLabel8.setAlignmentY(0.7F);
         jLabel8.setPreferredSize(new java.awt.Dimension(109, 40));
 
+        jComboBox2.setEditable(true);
         jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1", "2", "3", "4?JAJA WAOS" }));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -158,12 +158,11 @@ public class eliminarSalon extends javax.swing.JFrame {
                         .addComponent(jComboBox2, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jComboBox1, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(txtID5)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
                         .addComponent(jLabel11, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 214, Short.MAX_VALUE)
-                        .addComponent(txtID1, javax.swing.GroupLayout.Alignment.LEADING)))
+                        .addComponent(jLabel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(txtID1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap(11, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -228,13 +227,13 @@ public class eliminarSalon extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
-        this.setVisible(false);
-    }//GEN-LAST:event_btnCancelarActionPerformed
-
     private void btnProfesores2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfesores2ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnProfesores2ActionPerformed
+
+    private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
+        this.setVisible(false);
+    }//GEN-LAST:event_btnCancelarActionPerformed
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -250,13 +249,13 @@ public class eliminarSalon extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(eliminarSalon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(editarSalon_vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(eliminarSalon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(editarSalon_vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(eliminarSalon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(editarSalon_vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(eliminarSalon.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(editarSalon_vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -294,7 +293,7 @@ public class eliminarSalon extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new eliminarSalon().setVisible(true);
+                new editarSalon_vista().setVisible(true);
             }
         });
     }

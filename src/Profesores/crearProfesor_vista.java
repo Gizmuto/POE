@@ -1,8 +1,8 @@
 package Profesores;
 
-public class crearProfesor extends javax.swing.JFrame {
+public class crearProfesor_vista extends javax.swing.JFrame {
 
-    public crearProfesor() {
+    public crearProfesor_vista() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
@@ -17,11 +17,11 @@ public class crearProfesor extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        txtID = new javax.swing.JTextField();
+        txtID = new javax.swing.JTextField("id");
         jLabel7 = new javax.swing.JLabel();
-        txtID1 = new javax.swing.JTextField();
+        txtID1 = new javax.swing.JTextField("awa");
         jLabel8 = new javax.swing.JLabel();
-        txtID2 = new javax.swing.JTextField();
+        txtID2 = new javax.swing.JTextField("coco");
         jLabel9 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -51,7 +51,7 @@ public class crearProfesor extends javax.swing.JFrame {
         jLabel4.setPreferredSize(new java.awt.Dimension(109, 40));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utiles/logo_banner_chikito.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/logo_banner_chikito.png"))); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -105,7 +105,7 @@ public class crearProfesor extends javax.swing.JFrame {
         jLabel8.setAlignmentY(0.7F);
         jLabel8.setPreferredSize(new java.awt.Dimension(109, 40));
 
-        txtID2.setEditable(false);
+        txtID2.setEditable(true);
         txtID2.setToolTipText("USE EL BOTON PARA AÑADIR CURSOS");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -171,11 +171,16 @@ public class crearProfesor extends javax.swing.JFrame {
 
         btnAnadirHorario3.setBackground(new java.awt.Color(255, 204, 204));
         btnAnadirHorario3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnAnadirHorario3.setText("AÑADIR");
+        btnAnadirHorario3.setText("AÑADIR H");
         btnAnadirHorario3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
         btnAnadirHorario3.setMaximumSize(new java.awt.Dimension(100, 20));
         btnAnadirHorario3.setMinimumSize(new java.awt.Dimension(100, 20));
         btnAnadirHorario3.setPreferredSize(new java.awt.Dimension(100, 20));
+        btnAnadirHorario3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAnadirHorario3ActionPerformed(evt);
+            }
+        });
 
         btnAnadirHorario2.setBackground(new java.awt.Color(255, 204, 204));
         btnAnadirHorario2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -187,7 +192,7 @@ public class crearProfesor extends javax.swing.JFrame {
 
         btnAnadirHorario6.setBackground(new java.awt.Color(255, 204, 204));
         btnAnadirHorario6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnAnadirHorario6.setText("AÑADIR");
+        btnAnadirHorario6.setText("AÑADIR D");
         btnAnadirHorario6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
         btnAnadirHorario6.setMaximumSize(new java.awt.Dimension(100, 20));
         btnAnadirHorario6.setMinimumSize(new java.awt.Dimension(100, 20));
@@ -303,12 +308,21 @@ public class crearProfesor extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnProfesores2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfesores2ActionPerformed
-        // TODO add your handling code here:
+        new ProfesorConexion().crearProfesor();
+        btnAnadirHorario3.setEnabled(true);
     }//GEN-LAST:event_btnProfesores2ActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
+    private void btnAnadirHorario3ActionPerformed(java.awt.event.ActionEvent evt) {
+        cursos1[contador-1] = txtID2.getText();
+        txtID2.setText("");
+        contador += 1;
+        if(contador == 5){
+            btnAnadirHorario3.setEnabled(false);
+        }
+    }
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -324,13 +338,13 @@ public class crearProfesor extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(crearProfesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(crearProfesor_vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(crearProfesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(crearProfesor_vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(crearProfesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(crearProfesor_vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(crearProfesor.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(crearProfesor_vista.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -338,7 +352,7 @@ public class crearProfesor extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new crearProfesor().setVisible(true);
+                new crearProfesor_vista().setVisible(true);
             }
         });
     }
@@ -362,8 +376,13 @@ public class crearProfesor extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField txtID;
-    private javax.swing.JTextField txtID1;
-    private javax.swing.JTextField txtID2;
+    public static javax.swing.JTextField txtID;
+    public static javax.swing.JTextField txtID1;
+    public static javax.swing.JTextField txtID2;
+    public static String dia = "";
+    public static String hora = "";
+
+    int contador =  1;
+    public static String[] cursos1 = new String[4];
     // End of variables declaration//GEN-END:variables
 }

@@ -1,10 +1,14 @@
 package Alfa;
 
+import Cursos.CursosConexion;
+import Profesores.ProfesorConexion;
+import Salones.SalonesConexion;
 import Utils.emptyPane;
-import Profesores.Profesores;
-import Cursos.Cursos;
-import Salones.Salones;
+import Profesores.Profesores_vista;
+import Cursos.Cursos_vista;
+import Salones.Salones_vista;
 import java.awt.CardLayout;
+import java.sql.SQLException;
 
 public class menuPrincipal extends javax.swing.JFrame {
 
@@ -15,9 +19,9 @@ public class menuPrincipal extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         panelContenido.add(new emptyPane(), "");
-        panelContenido.add(new Profesores(), "profesores");
-        panelContenido.add(new Cursos(), "cursos");
-        panelContenido.add(new Salones(), "salones");
+        panelContenido.add(new Profesores_vista(), "profesores");
+        panelContenido.add(new Cursos_vista(), "cursos");
+        panelContenido.add(new Salones_vista(), "salones");
     }
 
     /**
@@ -54,7 +58,7 @@ public class menuPrincipal extends javax.swing.JFrame {
         jPanel1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jPanel1.setPreferredSize(new java.awt.Dimension(800, 60));
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utiles/logo_banner_chikito.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/logo_banner_chikito.png"))); // NOI18N
 
         jLabel4.setFont(new java.awt.Font("Segoe UI", 1, 30)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -97,7 +101,11 @@ public class menuPrincipal extends javax.swing.JFrame {
         btnProfesores.setText("PROFESORES");
         btnProfesores.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProfesoresActionPerformed(evt);
+                try {
+                    btnProfesoresActionPerformed(evt);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
@@ -106,7 +114,11 @@ public class menuPrincipal extends javax.swing.JFrame {
         btnSalones.setText("SALONES");
         btnSalones.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnSalonesActionPerformed(evt);
+                try {
+                    btnSalonesActionPerformed(evt);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
@@ -115,7 +127,11 @@ public class menuPrincipal extends javax.swing.JFrame {
         btnCursos.setText("CURSOS");
         btnCursos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnCursosActionPerformed(evt);
+                try {
+                    btnCursosActionPerformed(evt);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
@@ -218,19 +234,22 @@ public class menuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnProfesoresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfesoresActionPerformed
+    private void btnProfesoresActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {//GEN-FIRST:event_btnProfesoresActionPerformed
         CardLayout cl = (CardLayout)(panelContenido.getLayout());
         cl.show(panelContenido, "profesores");
+        new ProfesorConexion().mostrarProfesores(Profesores_vista.jTable1);
     }//GEN-LAST:event_btnProfesoresActionPerformed
 
-    private void btnSalonesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSalonesActionPerformed
+    private void btnSalonesActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {//GEN-FIRST:event_btnSalonesActionPerformed
         CardLayout cl = (CardLayout)(panelContenido.getLayout());
         cl.show(panelContenido, "salones");
+        new SalonesConexion().mostrarSalones(Salones_vista.jTable1);
     }//GEN-LAST:event_btnSalonesActionPerformed
 
-    private void btnCursosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCursosActionPerformed
+    private void btnCursosActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {//GEN-FIRST:event_btnCursosActionPerformed
         CardLayout cl = (CardLayout)(panelContenido.getLayout());
         cl.show(panelContenido, "cursos");
+        new CursosConexion().mostrarCurso(Cursos_vista.jTable1);
     }//GEN-LAST:event_btnCursosActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
