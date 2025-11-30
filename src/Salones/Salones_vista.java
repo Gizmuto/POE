@@ -1,8 +1,10 @@
 package Salones;
 
-public class Salones extends javax.swing.JPanel {
+import java.sql.SQLException;
 
-    public Salones() {
+public class Salones_vista extends javax.swing.JPanel {
+
+    public Salones_vista() {
         initComponents();
     }
 
@@ -97,7 +99,11 @@ public class Salones extends javax.swing.JPanel {
         jButton7.setPreferredSize(new java.awt.Dimension(106, 33));
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton7ActionPerformed(evt);
+                try {
+                    jButton7ActionPerformed(evt);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
@@ -142,7 +148,7 @@ public class Salones extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        // TODO add your handling code here:
+        new crearSalon_vista().setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -153,8 +159,8 @@ public class Salones extends javax.swing.JPanel {
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 
-    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
-        // TODO add your handling code here:
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {//GEN-FIRST:event_jButton7ActionPerformed
+        new SalonesConexion().mostrarSalones(jTable1);
     }//GEN-LAST:event_jButton7ActionPerformed
 
 
@@ -165,6 +171,6 @@ public class Salones extends javax.swing.JPanel {
     private javax.swing.JButton jButton7;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    public static javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

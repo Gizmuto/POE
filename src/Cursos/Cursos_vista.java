@@ -1,10 +1,11 @@
-package Profesores;
+package Cursos;
 
 import javax.swing.JOptionPane;
+import java.sql.SQLException;
 
-public class Profesores extends javax.swing.JPanel {
+public class Cursos_vista extends javax.swing.JPanel {
 
-    public Profesores() {
+    public Cursos_vista() {
         initComponents();
     }
 
@@ -29,7 +30,7 @@ public class Profesores extends javax.swing.JPanel {
         jLabel1.setBackground(new java.awt.Color(255, 229, 229));
         jLabel1.setFont(new java.awt.Font("Segoe UI", 1, 16)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("PROFESORES");
+        jLabel1.setText("CURSOS");
         jLabel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
         jLabel1.setMaximumSize(new java.awt.Dimension(680, 40));
         jLabel1.setMinimumSize(new java.awt.Dimension(680, 40));
@@ -46,14 +47,33 @@ public class Profesores extends javax.swing.JPanel {
 
             },
             new String [] {
-                "ID", "DOCENTE", "CURSOS IMPARTIBLES", "HORARIOS DISPONIBLES"
+                "CÓDIGO", "GRUPO", "CUPO", "DOCENTE RESPONSABLE", "HORARIO"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
         jTable1.setMaximumSize(new java.awt.Dimension(668, 80));
         jTable1.setMinimumSize(new java.awt.Dimension(668, 80));
         jTable1.setPreferredSize(new java.awt.Dimension(668, 80));
         jTable1.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(jTable1);
+        if (jTable1.getColumnModel().getColumnCount() > 0) {
+            jTable1.getColumnModel().getColumn(0).setMinWidth(100);
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(100);
+            jTable1.getColumnModel().getColumn(0).setMaxWidth(100);
+            jTable1.getColumnModel().getColumn(1).setMinWidth(50);
+            jTable1.getColumnModel().getColumn(1).setPreferredWidth(50);
+            jTable1.getColumnModel().getColumn(1).setMaxWidth(50);
+            jTable1.getColumnModel().getColumn(2).setMinWidth(50);
+            jTable1.getColumnModel().getColumn(2).setPreferredWidth(50);
+            jTable1.getColumnModel().getColumn(2).setMaxWidth(50);
+        }
 
         btnCrear.setBackground(new java.awt.Color(255, 242, 255));
         btnCrear.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -100,7 +120,11 @@ public class Profesores extends javax.swing.JPanel {
         btnActualizar.setPreferredSize(new java.awt.Dimension(106, 33));
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnActualizarActionPerformed(evt);
+                try {
+                    btnActualizarActionPerformed(evt);
+                } catch (SQLException e) {
+                    throw new RuntimeException(e);
+                }
             }
         });
 
@@ -145,7 +169,7 @@ public class Profesores extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnCrearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCrearActionPerformed
-        crearProfesor tmp = new crearProfesor();
+        crearCurso_vista tmp = new crearCurso_vista();
         tmp.setVisible(true);
     }//GEN-LAST:event_btnCrearActionPerformed
 
@@ -153,24 +177,24 @@ public class Profesores extends javax.swing.JPanel {
         String idBuscar = JOptionPane.showInputDialog(null,
             "Ingrese la identificación del profesor a editar:");
         //AQUI DEBE IR VALIDACIÓN DE ID EN BASE DE DATOS Y CARGAR DATOS 
-        //AL FORMULARIO editarProfesor
+        //AL FORMULARIO editarCurso
         //
-        editarProfesor tmp = new editarProfesor();
+        editarCurso_vista tmp = new editarCurso_vista();
         tmp.setVisible(true);
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
         String idBuscar = JOptionPane.showInputDialog(null,
-            "Ingrese la identificación del profesor a eliminar:");
+            "Ingrese la identificación del profesor a editar:");
         //AQUI DEBE IR VALIDACIÓN DE ID EN BASE DE DATOS Y CARGAR DATOS 
-        //AL FORMULARIO eliminarProfesor
+        //AL FORMULARIO eliminarCurso
         //
-        eliminarProfesor tmp = new eliminarProfesor();
+        eliminarCurso_vista tmp = new eliminarCurso_vista();
         tmp.setVisible(true);
     }//GEN-LAST:event_btnEliminarActionPerformed
 
-    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-        // TODO add your handling code here:
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {//GEN-FIRST:event_btnActualizarActionPerformed
+        new CursosConexion().mostrarCurso(jTable1);
     }//GEN-LAST:event_btnActualizarActionPerformed
 
 
@@ -181,6 +205,6 @@ public class Profesores extends javax.swing.JPanel {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    public static javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
