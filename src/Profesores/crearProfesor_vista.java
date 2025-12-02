@@ -17,11 +17,11 @@ public class crearProfesor_vista extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        txtID = new javax.swing.JTextField("id");
+        txtID = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        txtID1 = new javax.swing.JTextField("awa");
+        txtID1 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        txtID2 = new javax.swing.JTextField("coco");
+        txtID2 = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -51,7 +51,7 @@ public class crearProfesor_vista extends javax.swing.JFrame {
         jLabel4.setPreferredSize(new java.awt.Dimension(109, 40));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/logo_banner_chikito.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utiles/logo_banner_chikito.png"))); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -105,7 +105,7 @@ public class crearProfesor_vista extends javax.swing.JFrame {
         jLabel8.setAlignmentY(0.7F);
         jLabel8.setPreferredSize(new java.awt.Dimension(109, 40));
 
-        txtID2.setEditable(true);
+        txtID2.setEditable(false);
         txtID2.setToolTipText("USE EL BOTON PARA AÑADIR CURSOS");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -171,7 +171,7 @@ public class crearProfesor_vista extends javax.swing.JFrame {
 
         btnAnadirHorario3.setBackground(new java.awt.Color(255, 204, 204));
         btnAnadirHorario3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnAnadirHorario3.setText("AÑADIR H");
+        btnAnadirHorario3.setText("AÑADIR");
         btnAnadirHorario3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
         btnAnadirHorario3.setMaximumSize(new java.awt.Dimension(100, 20));
         btnAnadirHorario3.setMinimumSize(new java.awt.Dimension(100, 20));
@@ -192,7 +192,7 @@ public class crearProfesor_vista extends javax.swing.JFrame {
 
         btnAnadirHorario6.setBackground(new java.awt.Color(255, 204, 204));
         btnAnadirHorario6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnAnadirHorario6.setText("AÑADIR D");
+        btnAnadirHorario6.setText("AÑADIR");
         btnAnadirHorario6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
         btnAnadirHorario6.setMaximumSize(new java.awt.Dimension(100, 20));
         btnAnadirHorario6.setMinimumSize(new java.awt.Dimension(100, 20));
@@ -315,15 +315,15 @@ public class crearProfesor_vista extends javax.swing.JFrame {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
-    private void btnAnadirHorario3ActionPerformed(java.awt.event.ActionEvent evt) {
+
+    private void btnAnadirHorario3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnadirHorario3ActionPerformed
         cursos1[contador-1] = txtID2.getText();
         txtID2.setText("");
         contador += 1;
         if(contador == 5){
             btnAnadirHorario3.setEnabled(false);
-        }
+    }//GEN-LAST:event_btnAnadirHorario3ActionPerformed
     }
-
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -376,13 +376,8 @@ public class crearProfesor_vista extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
-    public static javax.swing.JTextField txtID;
-    public static javax.swing.JTextField txtID1;
-    public static javax.swing.JTextField txtID2;
-    public static String dia = "";
-    public static String hora = "";
-
-    int contador =  1;
-    public static String[] cursos1 = new String[4];
+    private javax.swing.JTextField txtID;
+    private javax.swing.JTextField txtID1;
+    private javax.swing.JTextField txtID2;
     // End of variables declaration//GEN-END:variables
 }

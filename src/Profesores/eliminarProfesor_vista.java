@@ -1,5 +1,8 @@
 package Profesores;
 
+import javax.swing.JTable;
+import javax.swing.JTextField;
+
 public class eliminarProfesor_vista extends javax.swing.JFrame {
 
     public eliminarProfesor_vista() {
@@ -19,12 +22,12 @@ public class eliminarProfesor_vista extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        txtID1 = new javax.swing.JTextField();
+        txtDocente = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        txtID2 = new javax.swing.JTextField();
+        txtCursos = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblHorarios = new javax.swing.JTable();
         btnProfesores2 = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
@@ -46,7 +49,7 @@ public class eliminarProfesor_vista extends javax.swing.JFrame {
         jLabel4.setPreferredSize(new java.awt.Dimension(109, 40));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/logo_banner_chikito.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Utils/logo_banner_chikito.png"))); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -89,6 +92,8 @@ public class eliminarProfesor_vista extends javax.swing.JFrame {
         jLabel6.setPreferredSize(new java.awt.Dimension(109, 40));
 
         txtID.setEditable(false);
+        txtID.setFocusCycleRoot(true);
+        txtID.setFocusTraversalPolicyProvider(true);
 
         jLabel7.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -96,7 +101,7 @@ public class eliminarProfesor_vista extends javax.swing.JFrame {
         jLabel7.setAlignmentY(0.7F);
         jLabel7.setPreferredSize(new java.awt.Dimension(109, 40));
 
-        txtID1.setEditable(false);
+        txtDocente.setEditable(false);
 
         jLabel8.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -104,8 +109,8 @@ public class eliminarProfesor_vista extends javax.swing.JFrame {
         jLabel8.setAlignmentY(0.7F);
         jLabel8.setPreferredSize(new java.awt.Dimension(109, 40));
 
-        txtID2.setEditable(false);
-        txtID2.setToolTipText("USE EL BOTON PARA AÑADIR CURSOS");
+        txtCursos.setEditable(false);
+        txtCursos.setToolTipText("USE EL BOTON PARA AÑADIR CURSOS");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -119,7 +124,7 @@ public class eliminarProfesor_vista extends javax.swing.JFrame {
         jScrollPane1.setMinimumSize(new java.awt.Dimension(388, 108));
         jScrollPane1.setPreferredSize(new java.awt.Dimension(388, 108));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblHorarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -135,13 +140,13 @@ public class eliminarProfesor_vista extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setEnabled(false);
-        jTable1.setFocusable(false);
-        jTable1.setRowSelectionAllowed(false);
-        jTable1.setShowGrid(true);
-        jTable1.getTableHeader().setResizingAllowed(false);
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
+        tblHorarios.setEnabled(false);
+        tblHorarios.setFocusable(false);
+        tblHorarios.setRowSelectionAllowed(false);
+        tblHorarios.setShowGrid(true);
+        tblHorarios.getTableHeader().setResizingAllowed(false);
+        tblHorarios.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblHorarios);
 
         btnProfesores2.setBackground(new java.awt.Color(255, 204, 204));
         btnProfesores2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -182,13 +187,13 @@ public class eliminarProfesor_vista extends javax.swing.JFrame {
                             .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnProfesores2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(txtID1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtDocente, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(txtID, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                             .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, 159, Short.MAX_VALUE)
                             .addGap(224, 224, 224))
-                        .addComponent(txtID2, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addComponent(txtCursos, javax.swing.GroupLayout.Alignment.LEADING))
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(11, Short.MAX_VALUE))
         );
@@ -202,11 +207,11 @@ public class eliminarProfesor_vista extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtID1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtDocente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtID2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtCursos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -261,6 +266,22 @@ public class eliminarProfesor_vista extends javax.swing.JFrame {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
+    public static JTextField getID() {
+        return txtID;
+    }
+
+    public static JTable getTblHorarios() {
+        return tblHorarios;
+    }
+
+    public static JTextField getTxtCursos() {
+        return txtCursos;
+    }
+
+    public static JTextField getTxtDocente() {
+        return txtDocente;
+    }
+    
 
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
@@ -311,9 +332,9 @@ public class eliminarProfesor_vista extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblHorarios;
+    private javax.swing.JTextField txtCursos;
+    private javax.swing.JTextField txtDocente;
     private javax.swing.JTextField txtID;
-    private javax.swing.JTextField txtID1;
-    private javax.swing.JTextField txtID2;
     // End of variables declaration//GEN-END:variables
 }

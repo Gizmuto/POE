@@ -8,7 +8,7 @@ public class ProfesorConexion {
     private static final String USER = "root";
     private static final String PASSWORD = "";
     public void crearProfesor(){
-        String sql = "INSERT INTO profesores (ID, Docente, CursoImpartible1, CursoImpartible2, CursoImpartible3, CursoImpartible4, HorariosDisponibles_dia, HorariosDisponibles_hola) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO profesores (ID, Docente, CursoImpartible1, CursoImpartible2, CursoImpartible3, CursoImpartible4, HorariosDisponibles_dia, HorariosDisponibles_hora) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
@@ -60,7 +60,7 @@ public class ProfesorConexion {
                 String CI3 = rs.getString("CursoImpartible3");
                 String CI4 = rs.getString("CursoImpartible4");
                 String HDdia = rs.getString("HorariosDisponibles_dia");
-                String HDhora = rs.getString("HorariosDisponibles_hola");
+                String HDhora = rs.getString("HorariosDisponibles_hora");
 
                 modelo.addRow(new Object[]{ID, Docente, CI1, CI2, CI3, CI4, HDdia, HDhora});
             }
@@ -90,5 +90,22 @@ public class ProfesorConexion {
         }
 
     }
+    
+    public ResultSet buscarProfesorPorID(int id) {
+        String sql = "SELECT * FROM profesores WHERE ID = ?";
+
+        try {
+            Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            pstmt.setInt(1, id);
+
+            return pstmt.executeQuery();
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al buscar el profesor: " + e.getMessage());
+            return null;
+        }
+    }
+
 
 }

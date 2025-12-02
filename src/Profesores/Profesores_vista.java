@@ -1,7 +1,9 @@
 package Profesores;
 
 import javax.swing.JOptionPane;
-import java.sql.SQLException;
+import java.sql.*;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
 
 public class Profesores_vista extends javax.swing.JPanel {
 
@@ -15,7 +17,7 @@ public class Profesores_vista extends javax.swing.JPanel {
 
         jLabel1 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblProfesores = new javax.swing.JTable();
         btnCrear = new javax.swing.JButton();
         btnEditar = new javax.swing.JButton();
         btnEliminar = new javax.swing.JButton();
@@ -42,7 +44,7 @@ public class Profesores_vista extends javax.swing.JPanel {
         jScrollPane1.setPreferredSize(new java.awt.Dimension(656, 188));
         jScrollPane1.setRequestFocusEnabled(false);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblProfesores.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -50,11 +52,11 @@ public class Profesores_vista extends javax.swing.JPanel {
                 "ID", "DOCENTE", "CURSOS IMPARTIBLES", "HORARIOS DISPONIBLES"
             }
         ));
-        jTable1.setMaximumSize(new java.awt.Dimension(668, 80));
-        jTable1.setMinimumSize(new java.awt.Dimension(668, 80));
-        jTable1.setPreferredSize(new java.awt.Dimension(668, 80));
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
+        tblProfesores.setMaximumSize(new java.awt.Dimension(668, 80));
+        tblProfesores.setMinimumSize(new java.awt.Dimension(668, 80));
+        tblProfesores.setPreferredSize(new java.awt.Dimension(668, 80));
+        tblProfesores.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblProfesores);
 
         btnCrear.setBackground(new java.awt.Color(255, 242, 255));
         btnCrear.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
@@ -101,11 +103,7 @@ public class Profesores_vista extends javax.swing.JPanel {
         btnActualizar.setPreferredSize(new java.awt.Dimension(106, 33));
         btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                try {
-                    btnActualizarActionPerformed(evt);
-                } catch (SQLException e) {
-                    throw new RuntimeException(e);
-                }
+                btnActualizarActionPerformed(evt);
             }
         });
 
@@ -165,19 +163,118 @@ public class Profesores_vista extends javax.swing.JPanel {
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed
-        String idBuscar = JOptionPane.showInputDialog(null,
-            "Ingrese la identificación del profesor a eliminar:");
-        //AQUI DEBE IR VALIDACIÓN DE ID EN BASE DE DATOS Y CARGAR DATOS 
-        //AL FORMULARIO eliminarProfesor
-        //
-        eliminarProfesor_vista tmp = new eliminarProfesor_vista();
-        tmp.setVisible(true);
+        String idBuscar = JOptionPane.showInputDialog(
+                null, "Ingrese la identificación del profesor a eliminar:"
+        );
+
+        if (idBuscar == null || idBuscar.trim().isEmpty()) {
+            return;
+        }
+
+        try {
+
+            ProfesorConexion conexion = new ProfesorConexion();
+            ResultSet rs = conexion.buscarProfesorPorID(Integer.parseInt(idBuscar));
+
+            if (rs != null && rs.next()) {
+
+                eliminarProfesor_vista tmp = new eliminarProfesor_vista();
+
+                // === SETEO DE CAMPOS USANDO GETTERS ESTÁTICOS ===
+                eliminarProfesor_vista.getID().setText(rs.getString("ID"));
+                eliminarProfesor_vista.getTxtDocente().setText(rs.getString("Docente"));
+
+                // Cursos
+                String c1 = rs.getString("CursoImpartible1");
+                String c2 = rs.getString("CursoImpartible2");
+                String c3 = rs.getString("CursoImpartible3");
+                String c4 = rs.getString("CursoImpartible4");
+
+                String cursos = "";
+
+                if (c1 != null && !c1.isEmpty()) cursos += c1 + " | ";
+                if (c2 != null && !c2.isEmpty()) cursos += c2 + " | ";
+                if (c3 != null && !c3.isEmpty()) cursos += c3 + " | ";
+                if (c4 != null && !c4.isEmpty()) cursos += c4 + " | ";
+
+                if (cursos.endsWith(" | ")) {
+                    cursos = cursos.substring(0, cursos.length() - 3);
+                }
+
+                eliminarProfesor_vista.getTxtCursos().setText(cursos);
+
+                // === TABLA DE HORARIOS ===
+                DefaultTableModel modelo =
+                        (DefaultTableModel) eliminarProfesor_vista.getTblHorarios().getModel();
+
+                modelo.setRowCount(1);
+
+                for (int col = 0; col < modelo.getColumnCount(); col++) {
+                    modelo.setValueAt("", 0, col);
+                }
+
+                String diasBD  = rs.getString("HorariosDisponibles_dia");
+                String horasBD = rs.getString("HorariosDisponibles_hora");
+
+                if (diasBD != null && horasBD != null) {
+                    String[] dias  = diasBD.split(",");
+                    String[] horas = horasBD.split(",");
+
+                    for (int i = 0; i < dias.length; i++) {
+
+                        String dia  = dias[i].trim();
+                        String hora = horas[i].trim();
+
+                        int col = switch (dia) {
+                            case "Lunes"     -> 0;
+                            case "Martes"    -> 1;
+                            case "Miercoles" -> 2;
+                            case "Jueves"    -> 3;
+                            case "Viernes"   -> 4;
+                            case "Sabado"    -> 5;
+                            default          -> -1;
+                        };
+
+                        if (col != -1) {
+                            String actual = (String) modelo.getValueAt(0, col);
+                            if (actual == null || actual.isEmpty()) {
+                                modelo.setValueAt(hora, 0, col);
+                            } else {
+                                modelo.setValueAt(actual + "\n" + hora, 0, col);
+                            }
+                        }
+                    }
+                }
+
+                tmp.setVisible(true);
+                this.setVisible(false);
+
+            } else {
+
+                JOptionPane.showMessageDialog(null,
+                        "No existe un profesor con ese ID.");
+            }
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null,
+                    "Error al procesar los datos: " + e.getMessage());
+        }
+
     }//GEN-LAST:event_btnEliminarActionPerformed
 
-    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) throws SQLException {//GEN-FIRST:event_btnActualizarActionPerformed
-        new ProfesorConexion().mostrarProfesores(jTable1);
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt){//GEN-FIRST:event_btnActualizarActionPerformed
+        try {
+            new ProfesorConexion().mostrarProfesores(tblProfesores);            
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null,
+                    "Error SQL: " + e.getMessage());
+        } 
     }//GEN-LAST:event_btnActualizarActionPerformed
 
+    public static JTable getTblProfesores() {
+        return tblProfesores;
+    }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;
@@ -186,6 +283,6 @@ public class Profesores_vista extends javax.swing.JPanel {
     private javax.swing.JButton btnEliminar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
-    public static javax.swing.JTable jTable1;
+    public static javax.swing.JTable tblProfesores;
     // End of variables declaration//GEN-END:variables
 }
