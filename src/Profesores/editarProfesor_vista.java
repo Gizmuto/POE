@@ -106,7 +106,7 @@ public class editarProfesor_vista extends javax.swing.JFrame {
         jLabel8.setAlignmentY(0.7F);
         jLabel8.setPreferredSize(new java.awt.Dimension(109, 40));
 
-        txtID2.setEditable(false);
+        txtID2.setEditable(true);
         txtID2.setToolTipText("USE EL BOTON PARA AÑADIR CURSOS");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -302,9 +302,13 @@ public class editarProfesor_vista extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    private static String[] partes;
     private void btnProfesores2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfesores2ActionPerformed
-        // TODO add your handling code here:
+        partes = txtID2.getText().split("\\|", -1);
+        for (int i = 0; i < partes.length; i++) {
+            partes[i] = partes[i].trim();
+        }
+        new ProfesorConexion().actualizarProfesor();
     }//GEN-LAST:event_btnProfesores2ActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -364,9 +368,25 @@ public class editarProfesor_vista extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField txtID;
-    private javax.swing.JTextField txtID1;
-    private javax.swing.JTextField txtID2;
+    private static javax.swing.JTable jTable1;
+    private static javax.swing.JTextField txtID;
+    private static javax.swing.JTextField txtID1;
+    private static javax.swing.JTextField txtID2;
     // End of variables declaration//GEN-END:variables
+
+    public static javax.swing.JTextField getTxtID() {
+        return txtID;
+    }
+    public static javax.swing.JTextField getTxtID1() {
+        return txtID1;
+    }
+    public static javax.swing.JTextField getTxtID2() {
+        return txtID2;
+    }
+    public static javax.swing.JTable getTblHorarios() {
+        return jTable1;
+    }
+    public static String[] getPartes() {
+        return partes;
+    }
 }

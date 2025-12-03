@@ -155,11 +155,86 @@ public class Profesores_vista extends javax.swing.JPanel {
     private void btnEditarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEditarActionPerformed
         String idBuscar = JOptionPane.showInputDialog(null,
             "Ingrese la identificación del profesor a editar:");
-        //AQUI DEBE IR VALIDACIÓN DE ID EN BASE DE DATOS Y CARGAR DATOS 
-        //AL FORMULARIO editarProfesor
-        //
-        editarProfesor_vista tmp = new editarProfesor_vista();
-        tmp.setVisible(true);
+        if (idBuscar == null || idBuscar.trim().isEmpty()) {
+            return;
+        }
+        try{
+            ProfesorConexion conexion = new ProfesorConexion();
+            ResultSet rs = conexion.buscarProfesorPorID(Integer.parseInt(idBuscar));
+
+            if (rs != null && rs.next()) {
+                editarProfesor_vista temp = new editarProfesor_vista();
+
+                editarProfesor_vista.getTxtID().setText(rs.getString("ID"));
+                editarProfesor_vista.getTxtID1().setText(rs.getString("Docente"));
+
+                String c1 = rs.getString("CursoImpartible1");
+                String c2 = rs.getString("CursoImpartible2");
+                String c3 = rs.getString("CursoImpartible3");
+                String c4 = rs.getString("CursoImpartible4");
+
+                String cursos = "";
+
+                if (c1 != null ) cursos += c1 + " | ";
+                if (c2 != null ) cursos += c2 + " | ";
+                if (c3 != null ) cursos += c3 + " | ";
+                if (c4 != null ) cursos += c4 + " | ";
+
+                if (cursos.endsWith(" | ")) {
+                    cursos = cursos.substring(0, cursos.length() - 3);
+                }
+
+                editarProfesor_vista.getTxtID2().setText(cursos);
+                DefaultTableModel modelo =
+                        (DefaultTableModel) editarProfesor_vista.getTblHorarios().getModel();
+
+                modelo.setRowCount(1);
+
+                for (int col = 0; col < modelo.getColumnCount(); col++) {
+                    modelo.setValueAt("", 0, col);
+                }
+
+                String diasBD  = rs.getString("HorariosDisponibles_dia");
+                String horasBD = rs.getString("HorariosDisponibles_hora");
+
+                if (diasBD != null && horasBD != null) {
+                    String[] dias  = diasBD.split(",");
+                    String[] horas = horasBD.split(",");
+
+                    for (int i = 0; i < dias.length; i++) {
+
+                        String dia  = dias[i].trim();
+                        String hora = horas[i].trim();
+
+                        int col = switch (dia) {
+                            case "Lunes"     -> 0;
+                            case "Martes"    -> 1;
+                            case "Miercoles" -> 2;
+                            case "Jueves"    -> 3;
+                            case "Viernes"   -> 4;
+                            case "Sabado"    -> 5;
+                            default          -> -1;
+                        };
+
+                        if (col != -1) {
+                            String actual = (String) modelo.getValueAt(0, col);
+                            if (actual == null || actual.isEmpty()) {
+                                modelo.setValueAt(hora, 0, col);
+                            } else {
+                                modelo.setValueAt(actual + "\n" + hora, 0, col);
+                            }
+                        }
+                    }
+                }
+
+                temp.setVisible(true);
+                this.setVisible(false);
+            }
+        }catch (SQLException e) {
+            JOptionPane.showMessageDialog(null,
+                    "Error al procesar los datos: " + e.getMessage());
+            }
+
     }//GEN-LAST:event_btnEditarActionPerformed
 
     private void btnEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnEliminarActionPerformed

@@ -1,11 +1,15 @@
 package Profesores;
 
+import java.awt.*;
+
 public class crearProfesor_vista extends javax.swing.JFrame {
+
 
     public crearProfesor_vista() {
         initComponents();
         this.setLocationRelativeTo(null);
     }
+
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -51,7 +55,7 @@ public class crearProfesor_vista extends javax.swing.JFrame {
         jLabel4.setPreferredSize(new java.awt.Dimension(109, 40));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utiles/logo_banner_chikito.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/logo_banner_chikito.png"))); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -105,7 +109,7 @@ public class crearProfesor_vista extends javax.swing.JFrame {
         jLabel8.setAlignmentY(0.7F);
         jLabel8.setPreferredSize(new java.awt.Dimension(109, 40));
 
-        txtID2.setEditable(false);
+        txtID2.setEditable(true);
         txtID2.setToolTipText("USE EL BOTON PARA AÑADIR CURSOS");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
@@ -315,7 +319,8 @@ public class crearProfesor_vista extends javax.swing.JFrame {
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.setVisible(false);
     }//GEN-LAST:event_btnCancelarActionPerformed
-
+    private static int contador = 1;
+    private static String[] cursos1 = new String[5];
     private void btnAnadirHorario3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnadirHorario3ActionPerformed
         cursos1[contador-1] = txtID2.getText();
         txtID2.setText("");
@@ -375,9 +380,22 @@ public class crearProfesor_vista extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField txtID;
-    private javax.swing.JTextField txtID1;
-    private javax.swing.JTextField txtID2;
+    private static javax.swing.JTable jTable1;
+    private static javax.swing.JTextField txtID;
+    private static javax.swing.JTextField txtID1;
+    private static javax.swing.JTextField txtID2;
     // End of variables declaration//GEN-END:variables
+
+    public static javax.swing.JTextField gettxtID() {
+        return txtID;
+    }
+    public static javax.swing.JTextField gettxtID1() {
+        return txtID1;
+    }
+    public static javax.swing.JTextField gettxtID2() {
+        return txtID2;
+    }
+    public static String[] getcursos1(){
+        return cursos1;
+    }
 }

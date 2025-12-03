@@ -19,16 +19,16 @@ public class crearCurso_vista extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel6 = new javax.swing.JLabel();
-        txtID = new javax.swing.JTextField("id");
+        txtID = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        txtID1 = new javax.swing.JTextField("awa");
+        txtID1 = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        txtID2 = new javax.swing.JTextField("coco");
+        txtID2 = new javax.swing.JTextField();
         btnProfesores2 = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         btnAnadirHorario8 = new javax.swing.JButton();
         jLabel11 = new javax.swing.JLabel();
-        txtID5 = new javax.swing.JTextField("weso");
+        txtID5 = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);

@@ -7,20 +7,22 @@ public class ProfesorConexion {
     private static final String URL = "jdbc:mysql://localhost:3306/horarios";
     private static final String USER = "root";
     private static final String PASSWORD = "";
+
+    //CRUD de profesores
     public void crearProfesor(){
         String sql = "INSERT INTO profesores (ID, Docente, CursoImpartible1, CursoImpartible2, CursoImpartible3, CursoImpartible4, HorariosDisponibles_dia, HorariosDisponibles_hora) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
-            pstmt.setInt(1, Integer.parseInt(crearProfesor_vista.txtID.getText()));
-            pstmt.setString(2, crearProfesor_vista.txtID1.getText());
-            pstmt.setString(3, crearProfesor_vista.cursos1[0]);
-            pstmt.setString(4, crearProfesor_vista.cursos1[1]);
-            pstmt.setString(5, crearProfesor_vista.cursos1[2]);
-            pstmt.setString(6, crearProfesor_vista.cursos1[3]);
-            pstmt.setString(7, crearProfesor_vista.dia);
-            pstmt.setString(8, crearProfesor_vista.hora);
+            pstmt.setInt(1, Integer.parseInt(crearProfesor_vista.gettxtID().getText()));
+            pstmt.setString(2, crearProfesor_vista.gettxtID1().getText());
+            pstmt.setString(3, crearProfesor_vista.getcursos1()[0]);
+            pstmt.setString(4, crearProfesor_vista.getcursos1()[1]);
+            pstmt.setString(5, crearProfesor_vista.getcursos1()[2]);
+            pstmt.setString(6, crearProfesor_vista.getcursos1()[3]);
+            pstmt.setString(7, "");
+            pstmt.setString(8, "");
 
             int filasInsertadas = pstmt.executeUpdate();
             if (filasInsertadas > 0) {
@@ -73,16 +75,15 @@ public class ProfesorConexion {
 
 
     }
-    public void eliminarSalon(){
-        String sql = "DELETE FROM salones  WHERE ID = ?";
+    public void eliminarProfesor(){
+        String sql = "DELETE FROM profesores  WHERE ID = ?";
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
-
-
-            int filasInsertadas = pstmt.executeUpdate();
-            if (filasInsertadas > 0) {
-                System.out.println("Un nuevo usuario fue insertado exitosamente.");
+            pstmt.setInt(1, Integer.parseInt(eliminarProfesor_vista.getID().getText()));
+            int eliminacion = pstmt.executeUpdate();
+            if (eliminacion > 0) {
+                System.out.println("El docente fue eliminado exitosamente.");
             }
 
         } catch (SQLException e) {
@@ -90,13 +91,35 @@ public class ProfesorConexion {
         }
 
     }
-    
+    public void actualizarProfesor(){
+        String sql = "UPDATE profesores SET DOCENTE = ?, CursoImpartible1 = ?, CursoImpartible2 = ?, CursoImpartible3 = ?, CursoImpartible4 = ? WHERE ID = ?";
+        try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+             PreparedStatement pstmt = conn.prepareStatement(sql)) {
+
+            pstmt.setString(1, editarProfesor_vista.getTxtID1().getText());
+            pstmt.setString(2, editarProfesor_vista.getPartes()[0]);
+            pstmt.setString(3, editarProfesor_vista.getPartes()[1]);
+            pstmt.setString(4, editarProfesor_vista.getPartes()[2]);
+            pstmt.setString(5, editarProfesor_vista.getPartes()[3]);
+            pstmt.setInt(6, Integer.parseInt(editarProfesor_vista.getTxtID().getText()));
+
+            int eliminacion = pstmt.executeUpdate();
+            if (eliminacion > 0) {
+                System.out.println("El docente fue actualizado exitosamente.");
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Error al actualizar el Docente: " + e.getMessage());
+        }
+    }
+
     public ResultSet buscarProfesorPorID(int id) {
         String sql = "SELECT * FROM profesores WHERE ID = ?";
 
         try {
             Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
             PreparedStatement pstmt = conn.prepareStatement(sql);
+
             pstmt.setInt(1, id);
 
             return pstmt.executeQuery();

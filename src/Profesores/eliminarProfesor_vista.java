@@ -260,7 +260,7 @@ public class eliminarProfesor_vista extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnProfesores2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfesores2ActionPerformed
-        // TODO add your handling code here:
+        new ProfesorConexion().eliminarProfesor();
     }//GEN-LAST:event_btnProfesores2ActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -332,9 +332,9 @@ public class eliminarProfesor_vista extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable tblHorarios;
-    private javax.swing.JTextField txtCursos;
-    private javax.swing.JTextField txtDocente;
-    private javax.swing.JTextField txtID;
+    private static javax.swing.JTable tblHorarios;
+    private static javax.swing.JTextField txtCursos;
+    private static javax.swing.JTextField txtDocente;
+    private static javax.swing.JTextField txtID;
     // End of variables declaration//GEN-END:variables
 }
