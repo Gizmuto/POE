@@ -50,7 +50,7 @@ public class editarProfesor_vista extends javax.swing.JFrame {
         jLabel4.setPreferredSize(new java.awt.Dimension(109, 40));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utiles/logo_banner_chikito.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Utils/logo_banner_chikito.png"))); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -367,10 +367,10 @@ public class editarProfesor_vista extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    public static javax.swing.JTable tblHorarios;
-    public static javax.swing.JTextField txtCursos;
-    public static javax.swing.JTextField txtID;
-    public static javax.swing.JTextField txtProfesor;
+    private javax.swing.JTable tblHorarios;
+    private javax.swing.JTextField txtCursos;
+    private javax.swing.JTextField txtID;
+    private javax.swing.JTextField txtProfesor;
     // End of variables declaration//GEN-END:variables
 
 }

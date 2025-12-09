@@ -228,7 +228,7 @@ public class menuPrincipal extends javax.swing.JFrame {
         try {
             CardLayout cl = (CardLayout)(panelContenido.getLayout());
             cl.show(panelContenido, "profesores");
-            new ProfesorConexion().mostrarProfesores(Profesores_vista.getTblProfesores());
+            new ProfesorConexion().mostrarProfesores(Profesores_vista.tblProfesores);
         } catch (SQLException e) {
             JOptionPane.showMessageDialog(null, "Error SQL: " + e.getMessage());
         }
