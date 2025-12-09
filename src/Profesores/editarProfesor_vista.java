@@ -24,7 +24,7 @@ public class editarProfesor_vista extends javax.swing.JFrame {
         txtCursos = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblHorarios = new javax.swing.JTable();
         btnProfesores2 = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
         btnAnadirHorario3 = new javax.swing.JButton();
@@ -120,7 +120,7 @@ public class editarProfesor_vista extends javax.swing.JFrame {
         jScrollPane1.setMinimumSize(new java.awt.Dimension(388, 108));
         jScrollPane1.setPreferredSize(new java.awt.Dimension(388, 108));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblHorarios.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -136,13 +136,13 @@ public class editarProfesor_vista extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jTable1.setEnabled(false);
-        jTable1.setFocusable(false);
-        jTable1.setRowSelectionAllowed(false);
-        jTable1.setShowGrid(true);
-        jTable1.getTableHeader().setResizingAllowed(false);
-        jTable1.getTableHeader().setReorderingAllowed(false);
-        jScrollPane1.setViewportView(jTable1);
+        tblHorarios.setEnabled(false);
+        tblHorarios.setFocusable(false);
+        tblHorarios.setRowSelectionAllowed(false);
+        tblHorarios.setShowGrid(true);
+        tblHorarios.getTableHeader().setResizingAllowed(false);
+        tblHorarios.getTableHeader().setReorderingAllowed(false);
+        jScrollPane1.setViewportView(tblHorarios);
 
         btnProfesores2.setBackground(new java.awt.Color(255, 204, 204));
         btnProfesores2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
@@ -367,7 +367,7 @@ public class editarProfesor_vista extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    public static javax.swing.JTable tblHorarios;
     public static javax.swing.JTextField txtCursos;
     public static javax.swing.JTextField txtID;
     public static javax.swing.JTextField txtProfesor;

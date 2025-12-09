@@ -188,7 +188,7 @@ public class Profesores_vista extends javax.swing.JPanel {
 
                 temp.txtCursos.setText(cursos);
                 DefaultTableModel modelo =
-                        (DefaultTableModel) editarProfesor_vista.getTblHorarios().getModel();
+                        (DefaultTableModel) editarProfesor_vista.tblHorarios.getModel();
 
                 modelo.setRowCount(1);
 
@@ -346,10 +346,6 @@ public class Profesores_vista extends javax.swing.JPanel {
         } 
     }//GEN-LAST:event_btnActualizarActionPerformed
 
-    public static JTable getTblProfesores() {
-        return tblProfesores;
-    }
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnActualizar;
