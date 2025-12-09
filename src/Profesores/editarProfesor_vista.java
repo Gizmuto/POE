@@ -19,9 +19,9 @@ public class editarProfesor_vista extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         txtID = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
-        txtID1 = new javax.swing.JTextField();
+        txtProfesor = new javax.swing.JTextField();
         jLabel8 = new javax.swing.JLabel();
-        txtID2 = new javax.swing.JTextField();
+        txtCursos = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
@@ -50,7 +50,7 @@ public class editarProfesor_vista extends javax.swing.JFrame {
         jLabel4.setPreferredSize(new java.awt.Dimension(109, 40));
 
         jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utils/logo_banner_chikito.png"))); // NOI18N
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/utiles/logo_banner_chikito.png"))); // NOI18N
 
         jLabel5.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel5.setForeground(new java.awt.Color(255, 255, 255));
@@ -106,8 +106,7 @@ public class editarProfesor_vista extends javax.swing.JFrame {
         jLabel8.setAlignmentY(0.7F);
         jLabel8.setPreferredSize(new java.awt.Dimension(109, 40));
 
-        txtID2.setEditable(true);
-        txtID2.setToolTipText("USE EL BOTON PARA AÑADIR CURSOS");
+        txtCursos.setToolTipText("USE EL BOTON PARA AÑADIR CURSOS");
 
         jLabel9.setFont(new java.awt.Font("Segoe UI", 1, 13)); // NOI18N
         jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
@@ -221,7 +220,7 @@ public class editarProfesor_vista extends javax.swing.JFrame {
                             .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(btnProfesores2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(txtID1, javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(txtProfesor, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(txtID, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
@@ -230,7 +229,7 @@ public class editarProfesor_vista extends javax.swing.JFrame {
                             .addComponent(btnAnadirHorario6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                             .addComponent(btnAnadirHorario7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(txtID2, javax.swing.GroupLayout.Alignment.LEADING))
+                        .addComponent(txtCursos, javax.swing.GroupLayout.Alignment.LEADING))
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(11, Short.MAX_VALUE))
         );
@@ -244,7 +243,7 @@ public class editarProfesor_vista extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtID1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtProfesor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAnadirHorario3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -252,7 +251,7 @@ public class editarProfesor_vista extends javax.swing.JFrame {
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(btnAnadirHorario2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtID2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(txtCursos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(btnAnadirHorario6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -304,11 +303,11 @@ public class editarProfesor_vista extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
     private static String[] partes;
     private void btnProfesores2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfesores2ActionPerformed
-        partes = txtID2.getText().split("\\|", -1);
+        partes = txtCursos.getText().split("\\|", -1);
         for (int i = 0; i < partes.length; i++) {
             partes[i] = partes[i].trim();
         }
-        new ProfesorConexion().actualizarProfesor(txtID1,txtID,partes);
+        new ProfesorConexion().actualizarProfesor(txtProfesor,txtID,partes);
     }//GEN-LAST:event_btnProfesores2ActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
@@ -368,25 +367,10 @@ public class editarProfesor_vista extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private static javax.swing.JTable jTable1;
-    private static javax.swing.JTextField txtID;
-    private static javax.swing.JTextField txtID1;
-    private static javax.swing.JTextField txtID2;
+    private javax.swing.JTable jTable1;
+    public static javax.swing.JTextField txtCursos;
+    public static javax.swing.JTextField txtID;
+    public static javax.swing.JTextField txtProfesor;
     // End of variables declaration//GEN-END:variables
 
-    public static javax.swing.JTextField getTxtID() {
-        return txtID;
-    }
-    public static javax.swing.JTextField getTxtID1() {
-        return txtID1;
-    }
-    public static javax.swing.JTextField getTxtID2() {
-        return txtID2;
-    }
-    public static javax.swing.JTable getTblHorarios() {
-        return jTable1;
-    }
-    public static String[] getPartes() {
-        return partes;
-    }
 }

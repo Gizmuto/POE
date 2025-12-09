@@ -164,7 +164,7 @@
                               <EmptySpace max="32767" attributes="0"/>
                               <Component id="btnProfesores2" min="-2" pref="120" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="txtID1" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtProfesor" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtID" alignment="0" max="32767" attributes="0"/>
                           <Component id="jLabel7" alignment="0" max="32767" attributes="0"/>
                           <Group type="102" alignment="0" attributes="0">
@@ -174,7 +174,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="btnAnadirHorario7" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Component id="txtID2" alignment="0" max="32767" attributes="0"/>
+                          <Component id="txtCursos" alignment="0" max="32767" attributes="0"/>
                       </Group>
                       <Component id="jLabel6" min="-2" pref="214" max="-2" attributes="0"/>
                   </Group>
@@ -192,7 +192,7 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jLabel7" min="-2" pref="20" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txtID1" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtProfesor" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="btnAnadirHorario3" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -202,7 +202,7 @@
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Component id="txtID2" min="-2" max="-2" attributes="0"/>
+                  <Component id="txtCursos" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="btnAnadirHorario6" alignment="0" min="-2" max="-2" attributes="0"/>
@@ -253,7 +253,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtID1">
+        <Component class="javax.swing.JTextField" name="txtProfesor">
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel8">
           <Properties>
@@ -268,9 +268,8 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="txtID2">
+        <Component class="javax.swing.JTextField" name="txtCursos">
           <Properties>
-            <Property name="editable" type="boolean" value="false"/>
             <Property name="toolTipText" type="java.lang.String" value="USE EL BOTON PARA A&#xd1;ADIR CURSOS"/>
           </Properties>
         </Component>

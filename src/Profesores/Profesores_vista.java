@@ -1,5 +1,7 @@
 package Profesores;
 
+
+
 import javax.swing.JOptionPane;
 import java.sql.*;
 import javax.swing.JTable;
@@ -165,8 +167,8 @@ public class Profesores_vista extends javax.swing.JPanel {
             if (rs != null && rs.next()) {
                 editarProfesor_vista temp = new editarProfesor_vista();
 
-                editarProfesor_vista.getTxtID().setText(rs.getString("ID"));
-                editarProfesor_vista.getTxtID1().setText(rs.getString("Docente"));
+                temp.txtID.setText(rs.getString("ID"));
+                temp.txtProfesor.setText(rs.getString("Docente"));
 
                 String c1 = rs.getString("CursoImpartible1");
                 String c2 = rs.getString("CursoImpartible2");
@@ -184,7 +186,7 @@ public class Profesores_vista extends javax.swing.JPanel {
                     cursos = cursos.substring(0, cursos.length() - 3);
                 }
 
-                editarProfesor_vista.getTxtID2().setText(cursos);
+                temp.txtCursos.setText(cursos);
                 DefaultTableModel modelo =
                         (DefaultTableModel) editarProfesor_vista.getTblHorarios().getModel();
 
