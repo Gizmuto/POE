@@ -9,16 +9,16 @@ public class SalonesConexion {
     private static final String URL = "jdbc:mysql://localhost:3306/horarios";
     private static final String USER = "root";
     private static final String PASSWORD = "";
-    public void crearSalon1(JTextField txtID1, JComboBox<String> jComboBox1, JComboBox<String> jComboBox2, JTextField txtID5){
+    public void crearSalon(JTextField txtID, JComboBox<String> cbProyector, JComboBox<String> cbTableros, JTextField txtCompus){
         String sql = "INSERT INTO salones (ID, Proyector, Computadores, Tableros) VALUES (?, ?, ?, ?)";
 
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
-            pstmt.setInt(1, Integer.parseInt(crearSalon_vista.txtID1.getText()));
-            pstmt.setString(2, crearSalon_vista.jComboBox1.getSelectedItem().toString());
-            pstmt.setInt(3, Integer.parseInt(crearSalon_vista.txtID5.getText()));
-            pstmt.setInt(4, Integer.parseInt(crearSalon_vista.jComboBox2.getSelectedItem().toString()));
+            pstmt.setInt(1, Integer.parseInt(crearSalon_vista.txtID.getText()));
+            pstmt.setString(2, crearSalon_vista.cbProyector.getSelectedItem().toString());
+            pstmt.setInt(3, Integer.parseInt(crearSalon_vista.txtCompus.getText()));
+            pstmt.setInt(4, Integer.parseInt(crearSalon_vista.cbTableros.getSelectedItem().toString()));
 
             int verificacion = pstmt.executeUpdate();
             if (verificacion > 0) {

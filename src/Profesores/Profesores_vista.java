@@ -228,7 +228,6 @@ public class Profesores_vista extends javax.swing.JPanel {
                 }
 
                 temp.setVisible(true);
-                this.setVisible(false);
             }
         }catch (SQLException e) {
             JOptionPane.showMessageDialog(null,
@@ -322,7 +321,6 @@ public class Profesores_vista extends javax.swing.JPanel {
                 }
 
                 tmp.setVisible(true);
-                this.setVisible(false);
 
             } else {
 
