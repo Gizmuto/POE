@@ -228,7 +228,7 @@ public class crearSalon_vista extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnProfesores2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfesores2ActionPerformed
-        new SalonesConexion().crearSalon1();
+        new SalonesConexion().crearSalon1(txtID1, jComboBox1, jComboBox2, txtID5);
     }//GEN-LAST:event_btnProfesores2ActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed

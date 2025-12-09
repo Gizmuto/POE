@@ -312,7 +312,7 @@ public class crearProfesor_vista extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnProfesores2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfesores2ActionPerformed
-        new ProfesorConexion().crearProfesor();
+        new ProfesorConexion().crearProfesor(txtID,txtID1,cursos1);
         btnAnadirHorario3.setEnabled(true);
     }//GEN-LAST:event_btnProfesores2ActionPerformed
 

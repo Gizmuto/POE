@@ -9,7 +9,7 @@ public class SalonesConexion {
     private static final String URL = "jdbc:mysql://localhost:3306/horarios";
     private static final String USER = "root";
     private static final String PASSWORD = "";
-    public void crearSalon1(){
+    public void crearSalon1(JTextField txtID1, JComboBox<String> jComboBox1, JComboBox<String> jComboBox2, JTextField txtID5){
         String sql = "INSERT INTO salones (ID, Proyector, Computadores, Tableros) VALUES (?, ?, ?, ?)";
 
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
@@ -20,8 +20,8 @@ public class SalonesConexion {
             pstmt.setInt(3, Integer.parseInt(crearSalon_vista.txtID5.getText()));
             pstmt.setInt(4, Integer.parseInt(crearSalon_vista.jComboBox2.getSelectedItem().toString()));
 
-            int filasInsertadas = pstmt.executeUpdate();
-            if (filasInsertadas > 0) {
+            int verificacion = pstmt.executeUpdate();
+            if (verificacion > 0) {
                 System.out.println("Un nuevo salon fue insertado exitosamente.");
             }
 
@@ -62,15 +62,14 @@ public class SalonesConexion {
 
 
     }
-    public void eliminarSalon(){
+    public void eliminarSalon(JTextField ID){
         String sql = "DELETE FROM salones  WHERE ID = ?";
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             pstmt.setInt(1, Integer.parseInt(ID.getText()));
 
-
-
-            int filasInsertadas = pstmt.executeUpdate();
-            if (filasInsertadas > 0) {
+            int verificacion = pstmt.executeUpdate();
+            if (verificacion > 0) {
                 System.out.println("El salon fue eliminado exitosamente.");
             }
 
@@ -78,5 +77,22 @@ public class SalonesConexion {
             System.out.println("Error al eliminar el Salon: " + e.getMessage());
         }
 
+    }
+    public void actualizarSalon(JTextField ID, JComboBox<String> jComboBox1, JComboBox<String> jComboBox2, JTextField txtNumComputadores){
+        String sql = "UPDATE salones SET Proyector = ?, Computadores = ?, tableros = ? WHERE ID = ?";
+        try(Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            pstmt.setString(1, jComboBox1.getSelectedItem().toString());
+            pstmt.setString(2, txtNumComputadores.getText());
+            pstmt.setString(3, jComboBox2.getSelectedItem().toString());
+            pstmt.setInt(4, Integer.parseInt(ID.getText()));
+            int verificacion = pstmt.executeUpdate();
+            if (verificacion > 0) {
+                System.out.println("El salon fue actualizado exitosamente.");
+            }
+        }
+        catch (SQLException e){
+            System.out.println("Error al actualizar el Salon: " + e.getMessage());
+        }
     }
 }

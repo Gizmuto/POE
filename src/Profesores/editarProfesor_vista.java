@@ -308,7 +308,7 @@ public class editarProfesor_vista extends javax.swing.JFrame {
         for (int i = 0; i < partes.length; i++) {
             partes[i] = partes[i].trim();
         }
-        new ProfesorConexion().actualizarProfesor();
+        new ProfesorConexion().actualizarProfesor(txtID1,txtID,partes);
     }//GEN-LAST:event_btnProfesores2ActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed

@@ -7,22 +7,22 @@ public class CursosConexion {
     private static final String URL = "jdbc:mysql://localhost:3306/horarios";
     private static final String USER = "root";
     private static final String PASSWORD = "";
-    public void crearCurso(){
+    public void crearCurso(JTextField txtID2, JTextField txtID5, JTextField txtID, JTextField txtID1){
         String sql = "INSERT INTO cursos (Codigo,id_Docente, Grupo, Cupo, Docente_responsable, Horario) VALUES (?, ?, ?, ?, ?, ?)";
         String sql2 = "SELECT Docente FROM profesores WHERE ID = ?";
 
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
             PreparedStatement pstmt1 = conn.prepareStatement(sql2);
-            pstmt1.setInt(1,Integer.parseInt(crearCurso_vista.txtID2.getText()));
+            pstmt1.setInt(1,Integer.parseInt(txtID2.getText()));
             ResultSet rs = pstmt1.executeQuery();
             rs.next();
             String nombreDocente = rs.getString(1);
 
-            pstmt.setInt(1, Integer.parseInt(crearCurso_vista.txtID5.getText()));
-            pstmt.setInt(2, Integer.parseInt(crearCurso_vista.txtID2.getText()));
-            pstmt.setString(3, crearCurso_vista.txtID.getText());
-            pstmt.setString(4,crearCurso_vista.txtID1.getText() );
+            pstmt.setInt(1, Integer.parseInt(txtID5.getText()));
+            pstmt.setInt(2, Integer.parseInt(txtID2.getText()));
+            pstmt.setString(3, txtID.getText());
+            pstmt.setString(4, txtID1.getText() );
             pstmt.setString(5, nombreDocente );
             pstmt.setString(6, "");
 
@@ -70,15 +70,14 @@ public class CursosConexion {
 
 
     }
-    public void eliminarCurso(){
+    public void eliminarCurso(JTextField ID){
         String sql = "DELETE FROM salones  WHERE ID = ?";
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
+             pstmt.setInt(1,Integer.parseInt(ID.getText()));
 
-
-
-            int filasInsertadas = pstmt.executeUpdate();
-            if (filasInsertadas > 0) {
+            int verificacion = pstmt.executeUpdate();
+            if (verificacion > 0) {
                 System.out.println("El salon fue eliminado exitosamente.");
             }
 
@@ -86,5 +85,29 @@ public class CursosConexion {
             System.out.println("Error al eliminar el Salon: " + e.getMessage());
         }
 
+    }
+    public void actualizarCurso(JTextField txtgrupo, JTextField txtcupo, JTextField txtdocente){
+        String sql = "UPDATE cursos SET id_Docente = ?, Grupo = ?, Cupo = ?, Docente_responsable = ? WHERE ID = ?";
+        String sql2 = "SELECT Docente FROM profesores WHERE ID = ?";
+        try(Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+            PreparedStatement pstmt = conn.prepareStatement(sql)){
+            PreparedStatement pstmt1 = conn.prepareStatement(sql2);
+            pstmt1.setInt(1,Integer.parseInt(txtdocente.getText()));
+            ResultSet rs = pstmt1.executeQuery();
+            rs.next();
+            String nombreDocente = rs.getString(1);
+            pstmt.setInt(1, Integer.parseInt(txtdocente.getText()));
+            pstmt.setInt(2, Integer.parseInt(txtgrupo.getText()));
+            pstmt.setInt(3, Integer.parseInt(txtcupo.getText()));
+            pstmt.setString(4, nombreDocente );
+            int verificacion = pstmt.executeUpdate();
+            if (verificacion > 0) {
+                System.out.println("El curso fue actualizado exitosamente.");
+            }
+
+
+        }catch (SQLException e){
+            System.out.println("Error al actualizar el curso: " + e.getMessage());
+        }
     }
 }
