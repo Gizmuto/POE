@@ -29,10 +29,10 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `cursos` (
   `Codigo` int(10) NOT NULL,
-  `id_Docente` int(11) NOT NULL,
+  `id_Docente` int(11),
   `Grupo` varchar(3) NOT NULL,
   `Cupo` varchar(3) NOT NULL,
-  `Docente_responsable` varchar(50) NOT NULL,
+  `Docente_responsable` varchar(50),
   `Horario` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish2_ci;
 
@@ -169,12 +169,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
---
--- AUTO_INCREMENT de la tabla `salones`
---
-ALTER TABLE `salones`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=91;
-
+--s
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
@@ -184,13 +179,6 @@ ALTER TABLE `usuarios`
 --
 -- Restricciones para tablas volcadas
 --
-
---
--- Filtros para la tabla `cursos`
---
-ALTER TABLE `cursos`
-  ADD CONSTRAINT `fk_profesor` FOREIGN KEY (`id_Docente`) REFERENCES `profesores` (`ID`);
-
 --
 -- Filtros para la tabla `usuarios`
 --
