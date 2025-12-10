@@ -155,14 +155,14 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel8" min="-2" pref="159" max="-2" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btnAnadirHorario3" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnCursoA" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnAnadirHorario2" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnCursoD" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="btnCancelar" min="-2" pref="120" max="-2" attributes="0"/>
                               <EmptySpace max="32767" attributes="0"/>
-                              <Component id="btnProfesores2" min="-2" pref="120" max="-2" attributes="0"/>
+                              <Component id="btnActualizar" min="-2" pref="120" max="-2" attributes="0"/>
                           </Group>
                           <Component id="txtProfesor" alignment="0" max="32767" attributes="0"/>
                           <Component id="txtID" alignment="0" max="32767" attributes="0"/>
@@ -170,9 +170,9 @@
                           <Group type="102" alignment="0" attributes="0">
                               <Component id="jLabel9" max="32767" attributes="0"/>
                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                              <Component id="btnAnadirHorario6" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnAnadirHorario" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
-                              <Component id="btnAnadirHorario7" min="-2" max="-2" attributes="0"/>
+                              <Component id="btnEliminarHorario" min="-2" max="-2" attributes="0"/>
                           </Group>
                           <Component id="txtCursos" alignment="0" max="32767" attributes="0"/>
                       </Group>
@@ -195,25 +195,25 @@
                   <Component id="txtProfesor" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btnAnadirHorario3" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnCursoA" alignment="0" min="-2" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="jLabel8" alignment="3" min="-2" pref="20" max="-2" attributes="0"/>
-                          <Component id="btnAnadirHorario2" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="btnCursoD" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="txtCursos" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Component id="btnAnadirHorario6" alignment="0" min="-2" max="-2" attributes="0"/>
-                      <Component id="btnAnadirHorario7" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnAnadirHorario" alignment="0" min="-2" max="-2" attributes="0"/>
+                      <Component id="btnEliminarHorario" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel9" min="-2" pref="20" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
                   <Component id="jScrollPane1" min="-2" pref="142" max="-2" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="btnProfesores2" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="btnActualizar" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                       <Component id="btnCancelar" alignment="3" min="-2" pref="40" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -326,7 +326,7 @@
             </Component>
           </SubComponents>
         </Container>
-        <Component class="javax.swing.JButton" name="btnProfesores2">
+        <Component class="javax.swing.JButton" name="btnActualizar">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="ff" type="rgb"/>
@@ -353,7 +353,7 @@
             </Property>
           </Properties>
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnProfesores2ActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnActualizarActionPerformed"/>
           </Events>
         </Component>
         <Component class="javax.swing.JButton" name="btnCancelar">
@@ -379,7 +379,7 @@
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="btnCancelarActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="btnAnadirHorario3">
+        <Component class="javax.swing.JButton" name="btnCursoA">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="ff" type="rgb"/>
@@ -406,7 +406,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btnAnadirHorario2">
+        <Component class="javax.swing.JButton" name="btnCursoD">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="ff" type="rgb"/>
@@ -433,7 +433,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btnAnadirHorario6">
+        <Component class="javax.swing.JButton" name="btnAnadirHorario">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="ff" type="rgb"/>
@@ -460,7 +460,7 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="btnAnadirHorario7">
+        <Component class="javax.swing.JButton" name="btnEliminarHorario">
           <Properties>
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="cc" green="cc" red="ff" type="rgb"/>

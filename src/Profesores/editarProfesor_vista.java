@@ -25,12 +25,12 @@ public class editarProfesor_vista extends javax.swing.JFrame {
         jLabel9 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblHorarios = new javax.swing.JTable();
-        btnProfesores2 = new javax.swing.JButton();
+        btnActualizar = new javax.swing.JButton();
         btnCancelar = new javax.swing.JButton();
-        btnAnadirHorario3 = new javax.swing.JButton();
-        btnAnadirHorario2 = new javax.swing.JButton();
-        btnAnadirHorario6 = new javax.swing.JButton();
-        btnAnadirHorario7 = new javax.swing.JButton();
+        btnCursoA = new javax.swing.JButton();
+        btnCursoD = new javax.swing.JButton();
+        btnAnadirHorario = new javax.swing.JButton();
+        btnEliminarHorario = new javax.swing.JButton();
         jPanel3 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -144,16 +144,16 @@ public class editarProfesor_vista extends javax.swing.JFrame {
         tblHorarios.getTableHeader().setReorderingAllowed(false);
         jScrollPane1.setViewportView(tblHorarios);
 
-        btnProfesores2.setBackground(new java.awt.Color(255, 204, 204));
-        btnProfesores2.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
-        btnProfesores2.setText("ACTUALIZAR");
-        btnProfesores2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
-        btnProfesores2.setMaximumSize(new java.awt.Dimension(120, 40));
-        btnProfesores2.setMinimumSize(new java.awt.Dimension(120, 40));
-        btnProfesores2.setPreferredSize(new java.awt.Dimension(120, 40));
-        btnProfesores2.addActionListener(new java.awt.event.ActionListener() {
+        btnActualizar.setBackground(new java.awt.Color(255, 204, 204));
+        btnActualizar.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
+        btnActualizar.setText("ACTUALIZAR");
+        btnActualizar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
+        btnActualizar.setMaximumSize(new java.awt.Dimension(120, 40));
+        btnActualizar.setMinimumSize(new java.awt.Dimension(120, 40));
+        btnActualizar.setPreferredSize(new java.awt.Dimension(120, 40));
+        btnActualizar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnProfesores2ActionPerformed(evt);
+                btnActualizarActionPerformed(evt);
             }
         });
 
@@ -169,37 +169,37 @@ public class editarProfesor_vista extends javax.swing.JFrame {
             }
         });
 
-        btnAnadirHorario3.setBackground(new java.awt.Color(255, 204, 204));
-        btnAnadirHorario3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnAnadirHorario3.setText("AÑADIR");
-        btnAnadirHorario3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
-        btnAnadirHorario3.setMaximumSize(new java.awt.Dimension(100, 20));
-        btnAnadirHorario3.setMinimumSize(new java.awt.Dimension(100, 20));
-        btnAnadirHorario3.setPreferredSize(new java.awt.Dimension(100, 20));
+        btnCursoA.setBackground(new java.awt.Color(255, 204, 204));
+        btnCursoA.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnCursoA.setText("AÑADIR");
+        btnCursoA.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
+        btnCursoA.setMaximumSize(new java.awt.Dimension(100, 20));
+        btnCursoA.setMinimumSize(new java.awt.Dimension(100, 20));
+        btnCursoA.setPreferredSize(new java.awt.Dimension(100, 20));
 
-        btnAnadirHorario2.setBackground(new java.awt.Color(255, 204, 204));
-        btnAnadirHorario2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnAnadirHorario2.setText("ELIMINAR");
-        btnAnadirHorario2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
-        btnAnadirHorario2.setMaximumSize(new java.awt.Dimension(100, 20));
-        btnAnadirHorario2.setMinimumSize(new java.awt.Dimension(100, 20));
-        btnAnadirHorario2.setPreferredSize(new java.awt.Dimension(100, 20));
+        btnCursoD.setBackground(new java.awt.Color(255, 204, 204));
+        btnCursoD.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnCursoD.setText("ELIMINAR");
+        btnCursoD.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
+        btnCursoD.setMaximumSize(new java.awt.Dimension(100, 20));
+        btnCursoD.setMinimumSize(new java.awt.Dimension(100, 20));
+        btnCursoD.setPreferredSize(new java.awt.Dimension(100, 20));
 
-        btnAnadirHorario6.setBackground(new java.awt.Color(255, 204, 204));
-        btnAnadirHorario6.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnAnadirHorario6.setText("AÑADIR");
-        btnAnadirHorario6.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
-        btnAnadirHorario6.setMaximumSize(new java.awt.Dimension(100, 20));
-        btnAnadirHorario6.setMinimumSize(new java.awt.Dimension(100, 20));
-        btnAnadirHorario6.setPreferredSize(new java.awt.Dimension(100, 20));
+        btnAnadirHorario.setBackground(new java.awt.Color(255, 204, 204));
+        btnAnadirHorario.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnAnadirHorario.setText("AÑADIR");
+        btnAnadirHorario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
+        btnAnadirHorario.setMaximumSize(new java.awt.Dimension(100, 20));
+        btnAnadirHorario.setMinimumSize(new java.awt.Dimension(100, 20));
+        btnAnadirHorario.setPreferredSize(new java.awt.Dimension(100, 20));
 
-        btnAnadirHorario7.setBackground(new java.awt.Color(255, 204, 204));
-        btnAnadirHorario7.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
-        btnAnadirHorario7.setText("ELIMINAR");
-        btnAnadirHorario7.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
-        btnAnadirHorario7.setMaximumSize(new java.awt.Dimension(100, 20));
-        btnAnadirHorario7.setMinimumSize(new java.awt.Dimension(100, 20));
-        btnAnadirHorario7.setPreferredSize(new java.awt.Dimension(100, 20));
+        btnEliminarHorario.setBackground(new java.awt.Color(255, 204, 204));
+        btnEliminarHorario.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        btnEliminarHorario.setText("ELIMINAR");
+        btnEliminarHorario.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(255, 0, 0)));
+        btnEliminarHorario.setMaximumSize(new java.awt.Dimension(100, 20));
+        btnEliminarHorario.setMinimumSize(new java.awt.Dimension(100, 20));
+        btnEliminarHorario.setPreferredSize(new java.awt.Dimension(100, 20));
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -213,22 +213,22 @@ public class editarProfesor_vista extends javax.swing.JFrame {
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                             .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 159, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(18, 18, 18)
-                            .addComponent(btnAnadirHorario3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnCursoA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnAnadirHorario2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnCursoD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                             .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(btnProfesores2, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(txtProfesor, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(txtID, javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                             .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addGap(18, 18, 18)
-                            .addComponent(btnAnadirHorario6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnAnadirHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(btnAnadirHorario7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(btnEliminarHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(txtCursos, javax.swing.GroupLayout.Alignment.LEADING))
                     .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(11, Short.MAX_VALUE))
@@ -246,22 +246,22 @@ public class editarProfesor_vista extends javax.swing.JFrame {
                 .addComponent(txtProfesor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAnadirHorario3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnCursoA, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel8, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnAnadirHorario2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(btnCursoD, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtCursos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnAnadirHorario6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAnadirHorario7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAnadirHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnEliminarHorario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(btnProfesores2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnActualizar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnCancelar, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
@@ -302,13 +302,13 @@ public class editarProfesor_vista extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     private static String[] partes;
-    private void btnProfesores2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnProfesores2ActionPerformed
+    private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         partes = txtCursos.getText().split("\\|", -1);
         for (int i = 0; i < partes.length; i++) {
             partes[i] = partes[i].trim();
         }
         new ProfesorConexion().actualizarProfesor(txtProfesor,txtID,partes);
-    }//GEN-LAST:event_btnProfesores2ActionPerformed
+    }//GEN-LAST:event_btnActualizarActionPerformed
 
     private void btnCancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarActionPerformed
         this.setVisible(false);
@@ -350,12 +350,12 @@ public class editarProfesor_vista extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnAnadirHorario2;
-    private javax.swing.JButton btnAnadirHorario3;
-    private javax.swing.JButton btnAnadirHorario6;
-    private javax.swing.JButton btnAnadirHorario7;
+    private javax.swing.JButton btnActualizar;
+    private javax.swing.JButton btnAnadirHorario;
     private javax.swing.JButton btnCancelar;
-    private javax.swing.JButton btnProfesores2;
+    private javax.swing.JButton btnCursoA;
+    private javax.swing.JButton btnCursoD;
+    private javax.swing.JButton btnEliminarHorario;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;

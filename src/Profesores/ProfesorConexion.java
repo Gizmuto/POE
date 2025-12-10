@@ -3,20 +3,37 @@ package Profesores;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.sql.*;
+
 public class ProfesorConexion {
     private static final String URL = "jdbc:mysql://localhost:3306/horarios";
     private static final String USER = "root";
     private static final String PASSWORD = "";
 
-    //CRUD de profesores
-    public void crearProfesor(JTextField txtID, JTextField txtID1, String[] cursos){
-        String sql = "INSERT INTO profesores (ID, Docente, CursoImpartible1, CursoImpartible2, CursoImpartible3, CursoImpartible4, HorariosDisponibles_dia, HorariosDisponibles_hora) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    public void crearProfesor(JTextField txtID, JTextField txtProfesor, JTextField txtCursos){
+
+        String[] cursos = new String[4];
+
+        for (int i = 0; i < cursos.length; i++) {
+            cursos[i] = null;
+        }
+
+        if (!txtCursos.getText().isEmpty()) {
+            String[] cursosIngresados = txtCursos.getText().split(",");
+
+            for (int i = 0; i < cursosIngresados.length && i < 4; i++) {
+                cursos[i] = cursosIngresados[i];
+            }
+        }
+            String sql = "INSERT INTO profesores (ID, Docente, CursoImpartible1, "
+            + "CursoImpartible2, CursoImpartible3, CursoImpartible4, "
+            + "HorariosDisponibles_dia, HorariosDisponibles_hora) "
+            + "VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
         try (Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
              PreparedStatement pstmt = conn.prepareStatement(sql)) {
 
             pstmt.setInt(1, Integer.parseInt(txtID.getText()));
-            pstmt.setString(2, txtID1.getText());
+            pstmt.setString(2, txtProfesor.getText());
             pstmt.setString(3, cursos[0]);
             pstmt.setString(4, cursos[1]);
             pstmt.setString(5, cursos[2]);
@@ -32,9 +49,9 @@ public class ProfesorConexion {
         } catch (SQLException e) {
             System.out.println("Error al insertar el Docente: " + e.getMessage());
         }
-
-
     }
+    
+    
     public void mostrarProfesores(JTable profesor) throws SQLException {
         DefaultTableModel modelo = new DefaultTableModel();
         modelo.addColumn("ID");
@@ -51,7 +68,6 @@ public class ProfesorConexion {
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
 
-            // Limpiar el modelo antes de cargar nuevos datos
             modelo.setRowCount(0);
 
             while (rs.next()) {

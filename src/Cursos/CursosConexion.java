@@ -110,4 +110,21 @@ public class CursosConexion {
             System.out.println("Error al actualizar el curso: " + e.getMessage());
         }
     }
+    
+        public ResultSet buscarCursoPorID(int id) {
+        String sql = "SELECT * FROM cursos WHERE ID = ?";
+
+        try {
+            Connection conn = DriverManager.getConnection(URL, USER, PASSWORD);
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+
+            pstmt.setInt(1, id);
+
+            return pstmt.executeQuery();
+
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(null, "Error al buscar el curso: " + e.getMessage());
+            return null;
+        }
+    }
 }
