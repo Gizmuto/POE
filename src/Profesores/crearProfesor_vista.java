@@ -446,9 +446,9 @@ public class crearProfesor_vista extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
-    private javax.swing.JTextField txtCursos;
-    private javax.swing.JTextField txtID;
-    private javax.swing.JTextField txtProfesor;
+    public static javax.swing.JTable jTable1;
+    public static javax.swing.JTextField txtCursos;
+    public static javax.swing.JTextField txtID;
+    public static javax.swing.JTextField txtProfesor;
     // End of variables declaration//GEN-END:variables
 }
