@@ -3,6 +3,7 @@ package Profesores;
 import Cursos.CursosConexion;
 import java.awt.*;
 import javax.swing.JOptionPane;
+import java.sql.*;
 
 public class crearProfesor_vista extends javax.swing.JFrame {
 
@@ -324,7 +325,7 @@ public class crearProfesor_vista extends javax.swing.JFrame {
 
     private void btnAnadirCursoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAnadirCursoActionPerformed
         CursosConexion pc = new CursosConexion();
-        
+
         String codigo = JOptionPane.showInputDialog(
                 this,
                 "Ingrese el código del curso:"
@@ -332,7 +333,25 @@ public class crearProfesor_vista extends javax.swing.JFrame {
 
         if (codigo == null || codigo.trim().isEmpty()) return;
 
-        String nombreCurso = pc.buscarCursoPorID(codigo.trim());
+        String nombreCurso = null;
+
+        try {
+            int idNumerico = Integer.parseInt(codigo.trim());
+
+            ResultSet rs = pc.buscarCursoPorID(idNumerico); 
+
+            if (rs != null && rs.next()) {
+                nombreCurso = rs.getString("nombre"); 
+                rs.close();
+            }
+
+        } catch (NumberFormatException e) {
+            JOptionPane.showMessageDialog(this, "El código debe ser un número válido.");
+            return;
+        } catch (SQLException e) {
+            JOptionPane.showMessageDialog(this, "Error al leer datos: " + e.getMessage());
+            return;
+        }
 
         if (nombreCurso == null) {
             JOptionPane.showMessageDialog(this, "Curso no encontrado.");
@@ -363,10 +382,17 @@ public class crearProfesor_vista extends javax.swing.JFrame {
                     return;
                 }
 
+                // Verifica si el curso ya está en la lista para no repetirlo (Opcional pero recomendado)
+                for (String c : cursos) {
+                    if (c.trim().equals(codigo.trim())) {
+                        JOptionPane.showMessageDialog(this, "El curso ya está agregado.");
+                        return;
+                    }
+                }
+
                 txtCursos.setText(actual + "," + codigo.trim());
             }
         }
-
     }//GEN-LAST:event_btnAnadirCursoActionPerformed
 
     public static void main(String args[]) {
@@ -425,17 +451,4 @@ public class crearProfesor_vista extends javax.swing.JFrame {
     private javax.swing.JTextField txtID;
     private javax.swing.JTextField txtProfesor;
     // End of variables declaration//GEN-END:variables
-
-    public static javax.swing.JTextField gettxtID() {
-        return txtID;
-    }
-    public static javax.swing.JTextField gettxtID1() {
-        return txtProfesor;
-    }
-    public static javax.swing.JTextField gettxtID2() {
-        return txtCursos;
-    }
-    public static String[] getcursos1(){
-        return cursos1;
-    }
 }
